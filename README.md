@@ -1,18 +1,18 @@
 # PHP REST api
 
-This is a simple server-side application that has not been tested in production, it is based on the MVC design pattern so it should look familiar to php developers. It does not make use of any kind of authentication.
+This is a micro-framework for developing RESTful APIs, it is based on the MVC design pattern so it should look familiar to php developers. Authentication implementation and unit testing is up to you. 
 
-It follows the same URL routing architecture and uses controllers to separate the business logic and each "view" is a method inside the controller that creates/updates or retrieves a resource. It returns a json object when retrieving a resource and when creating/updating it makes use of HTTP status codes. 
+It follows the same URL routing architecture as in MVC based systems, each controller abstracts the business logic of a particular resource, a "view" would be a method inside the controller. Each endpoint can only create, update or retrieve a resource. 
 
 # URL structure 
 
-Manipulation of resources is done through endpoints, each endpoint does only one thing. Example:
+Manipulation of resources are done through endpoints. Example:
 
-apiurl/controler/method/param1/param2... (You can have no params!) 
+apiurl/controller/method/param1/param2...  
 
 # Controllers
 
-When creating a new controller the filename must be the same as the class name. Example:
+When creating a new controller the filename must be the same as the class name, this makes autoloading easier.  Example:
 
 class Users{}
 filename: Users.php
